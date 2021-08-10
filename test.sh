@@ -8,6 +8,8 @@ fi
 echo "$1"
 COMPILED=$(kustomize build $1)
 IMAGE=$(echo -e "$COMPILED" | grep "image:" | sed -e 's/.*: //g')
+echo -n "kustomized: "
 docker pull -q "$IMAGE"
+echo -n "digest:     "
+docker inspect "$IMAGE" | jq -r '.[0].RepoDigests[0]'
 echo "-----"
-
