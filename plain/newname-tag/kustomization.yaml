@@ -5,4 +5,4 @@ resources:
 - ../base
 images:
   - name: alpine
-    newName: jitesoft/alpine:3.14.0
+    newName: thepwagner/alpine:3.14.0
