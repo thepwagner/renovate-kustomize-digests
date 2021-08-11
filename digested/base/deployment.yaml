@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: alpine
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: alpine
+  strategy:
+    type: RollingUpdate
+  template:
+    spec:
+      containers:
+        - name: alpine
+          image: "alpine@sha256:d9a7354e3845ea8466bb00b22224d9116b183e594527fb5b6c3d30bc01a20378"
+          imagePullPolicy: IfNotPresent
+          command: ["sh", "-c", "tail -f /dev/null"]
