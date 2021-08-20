@@ -6,4 +6,4 @@ resources:
 images:
   - name: alpine
     newName: thepwagner/alpine
-    newTag: 3.14.0
+    newTag: 3.14.1
